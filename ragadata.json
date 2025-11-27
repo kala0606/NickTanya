@@ -1,0 +1,183 @@
+{
+  "raga_suggestions": [
+    {
+      "time_slot": "04:00-06:00 AM",
+      "moods": [
+        {
+          "name": "Dawn Serenity",
+          "color_scheme": {
+            "primary": "#283618",
+            "secondary": "#606C38",
+            "accent": "#B6AD90",
+            "text": "#FEFAE0",
+            "background": "#333D29"
+          },
+          "ragas": [
+            {
+              "name": "Megh Malhar",
+              "description": "A majestic monsoon raga, Megh Malhar evokes the grandeur of rain clouds and the refreshing atmosphere of monsoon season. Its deep, resonant character creates a sense of awe and natural beauty, perfect for dawn's awakening.",
+              "aroha": "S R G M P D N S'",
+              "avroha": "S' N D P M G R S",
+              "pakad": "S R G M P D N S', G M P D N S'",
+              "vadi": "M (Shuddha Madhyam)",
+              "samvadi": "S (Shadaj)",
+              "composition": {
+                "drumPatterns": {},
+                "tablaPatterns": {
+                  "TeenTaal": {
+                    "F2": [1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0],
+                    "C2": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0],
+                    "E2": [1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0],
+                    "beats": 16
+                  },
+                  "Keherwa": {
+                    "F2": [1, 0, 0, 0, 0, 0, 1, 0],
+                    "E2": [0, 1, 0, 0, 0, 1, 0, 0],
+                    "C2": [0, 0, 1, 0, 1, 0, 0, 0],
+                    "D2": [0, 0, 0, 1, 0, 0, 0, 0],
+                    "beats": 8
+                  },
+                  "Dadra": {
+                    "F2": [1, 0, 0, 1, 0, 0],
+                    "C2": [0, 1, 1, 0, 1, 1],
+                    "beats": 6
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "time_slot": "06:00-10:00 AM",
+      "moods": [
+        {
+          "name": "Morning Majesty",
+          "color_scheme": {
+            "primary": "#8D0801",
+            "secondary": "#BF0603",
+            "accent": "#F4D58D",
+            "text": "#FFF8DC",
+            "background": "#001427"
+          },
+          "ragas": [
+            {
+              "name": "Megh Malhar",
+              "description": "As the morning unfolds, Megh Malhar's grand and uplifting character provides a majestic start to the day. Its association with monsoon clouds brings a sense of abundance, freshness, and natural power.",
+              "aroha": "S R G M P D N S'",
+              "avroha": "S' N D P M G R S",
+              "pakad": "S R G M P D N S', G M P D N S'",
+              "vadi": "M (Shuddha Madhyam)",
+              "samvadi": "S (Shadaj)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "time_slot": "10:00 AM - 02:00 PM",
+      "moods": [
+        {
+          "name": "Midday Grandeur",
+          "color_scheme": {
+            "primary": "#355070",
+            "secondary": "#6D597A",
+            "accent": "#B56576",
+            "text": "#EAAC8B",
+            "background": "#E56B6F"
+          },
+          "ragas": [
+            {
+              "name": "Megh Malhar",
+              "description": "During the peak of day, Megh Malhar's powerful and expansive nature creates an atmosphere of grandeur and natural majesty. Its deep resonance reflects the full intensity of daylight and the promise of monsoon's life-giving waters.",
+              "aroha": "S R G M P D N S'",
+              "avroha": "S' N D P M G R S",
+              "pakad": "S R G M P D N S', G M P D N S'",
+              "vadi": "M (Shuddha Madhyam)",
+              "samvadi": "S (Shadaj)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "time_slot": "02:00 PM - 06:00 PM",
+      "moods": [
+        {
+          "name": "Afternoon Splendor",
+          "color_scheme": {
+            "primary": "#355070",
+            "secondary": "#6D597A",
+            "accent": "#E56B6F",
+            "text": "#EAAC8B",
+            "background": "#B56576"
+          },
+          "ragas": [
+            {
+              "name": "Megh Malhar",
+              "description": "As afternoon progresses, Megh Malhar's majestic character takes on a more contemplative quality. The raga's association with monsoon clouds brings a sense of anticipation and the cooling promise of rain.",
+              "aroha": "S R G M P D N S'",
+              "avroha": "S' N D P M G R S",
+              "pakad": "S R G M P D N S', G M P D N S'",
+              "vadi": "M (Shuddha Madhyam)",
+              "samvadi": "S (Shadaj)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "time_slot": "06:00 PM - 10:00 PM",
+      "moods": [
+        {
+          "name": "Evening Majesty",
+          "color_scheme": {
+            "primary": "#CDDBDB",
+            "secondary": "#CDDBDB",
+            "accent": "#FFAFCC",
+            "text": "#CDDBDB",
+            "background": "#CDB4DB"
+          },
+          "ragas": [
+            {
+              "name": "Megh Malhar",
+              "description": "In the evening, Megh Malhar's grand and romantic character creates a majestic atmosphere. The raga's monsoon associations bring a sense of romance, mystery, and the beauty of nature's cycles.",
+              "aroha": "S R G M P D N S'",
+              "avroha": "S' N D P M G R S",
+              "pakad": "S R G M P D N S', G M P D N S'",
+              "vadi": "M (Shuddha Madhyam)",
+              "samvadi": "S (Shadaj)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "time_slot": "10:00 PM - 04:00 AM",
+      "moods": [
+        {
+          "name": "Night Grandeur",
+          "color_scheme": {
+            "primary": "#001D3D",
+            "secondary": "#003566",
+            "accent": "#002366",
+            "text": "#F8F8FF",
+            "background": "#000814"
+          },
+          "ragas": [
+            {
+              "name": "Megh Malhar",
+              "description": "During the deep night, Megh Malhar takes on a profound and mystical quality. The raga's association with monsoon clouds and thunder creates a sense of cosmic grandeur and the eternal cycles of nature.",
+              "aroha": "S R G M P D N S'",
+              "avroha": "S' N D P M G R S",
+              "pakad": "S R G M P D N S', G M P D N S'",
+              "vadi": "M (Shuddha Madhyam)",
+              "samvadi": "S (Shadaj)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+} 

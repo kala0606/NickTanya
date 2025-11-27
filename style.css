@@ -1,0 +1,353 @@
+:root {
+    --background-color: #000;
+    --primary-color: #36454F;
+    --secondary-color: #E6E6FA;
+    --accent-color: #6A5ACD;
+    --text-color: #F8F8FF;
+}
+
+html {
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+#logo-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+}
+
+#app-logo {
+    width: 50px;
+    height: 50px;
+    background-color: #fff; /* Default color (white) */
+    -webkit-mask-image: url(logo.svg);
+    mask-image: url(logo.svg);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    padding-top: 40px;
+}
+
+body.experience-view #logo-container {
+    left: auto;
+    right: 20px;
+    transform: none;
+}
+
+body.experience-view #app-logo {
+    width: 35px;
+    height: 35px;
+}
+
+#app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+#app.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    color: white;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 25px 20px;
+    pointer-events: auto;
+}
+
+#welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(10, 10, 20, 0.98);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes footer to the bottom */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+    overflow-y: auto; /* Allow scrolling for main content */
+    padding: 2rem 1rem;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+#welcome-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.welcome-container {
+    max-width: 900px;
+    padding: 40px;
+    width: 100%; /* Ensure it takes up space */
+}
+
+.welcome-container h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3.5rem;
+    color: var(--text-color);
+    transition: color 0.5s ease;
+    line-height: 1.2;
+    justify-content: center; /* Center the raga name */
+}
+
+.welcome-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.4;
+}
+
+.mood-section {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.mood-title {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.raga-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.raga-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.raga-card:hover {
+    background: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.raga-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.raga-card p {
+    font-size: 0.95em;
+    color: var(--text-color);
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+.footer-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* High z-index to ensure it's above canvas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    pointer-events: auto; /* Ensure it can receive clicks */
+}
+
+#playback-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.control-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 0px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Helvetica Neue', sans-serif;
+    transition: background-color 0.2s;
+}
+
+#mode-toggle {
+    position: relative;
+    width: 180px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+#mode-toggle .mode-text {
+    position: absolute;
+    width: 60px;
+    text-align: center;
+    transition: color 0.3s ease;
+    pointer-events: auto;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+#mode-toggle .knob {
+    position: absolute;
+    width: 60px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+/* Mode text positioning */
+#mode-toggle .mode-text:nth-child(1) { 
+    left: 0px; 
+    color: #000; /* Text under knob is black */
+}
+
+#mode-toggle .mode-text:nth-child(2) { 
+    left: 60px; 
+    color: #fff; 
+}
+
+#mode-toggle .mode-text:nth-child(3) { 
+    left: 120px; 
+    color: #fff; 
+}
+
+/* Rhythm mode active */
+#mode-toggle.rhythm-active .knob {
+    transform: translateX(60px);
+}
+
+#mode-toggle.rhythm-active .mode-text:nth-child(1) { color: #fff; }
+#mode-toggle.rhythm-active .mode-text:nth-child(2) { color: #000; } /* Text under knob is black */
+#mode-toggle.rhythm-active .mode-text:nth-child(3) { color: #fff; }
+
+/* Interaction mode active */
+#mode-toggle.interaction-active .knob {
+    transform: translateX(120px);
+}
+
+#mode-toggle.interaction-active .mode-text:nth-child(1) { color: #fff; }
+#mode-toggle.interaction-active .mode-text:nth-child(2) { color: #fff; }
+#mode-toggle.interaction-active .mode-text:nth-child(3) { color: #000; } /* Text under knob is black */
+
+.control-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#start-stop-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#start-stop-button::before {
+    content: '▶';
+    font-size: 20px;
+    color: white;
+    transform: translateX(2px);
+}
+
+#start-stop-button.playing::before {
+    content: '❚❚';
+    font-size: 16px;
+    transform: translateX(0);
+}
+
+#raga-name-display {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Helvetica Neue', sans-serif;
+    /* text-shadow: 1px 1px 3px rgba(0,0,0,0.5); */
+    text-align: center;
+    flex-grow: 1;
+}
+
+#back-button {
+    font-size: 24px;
+    padding: 5px 12px;
+    position: absolute;
+    left: 20px;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding-bottom: 10px;
+}

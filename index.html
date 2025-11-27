@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raga.fm : Generative Indian Classical Music</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/15.0.4/Tone.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/raga.js"></script>
+    <script src="js/visuals.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="sketch.js"></script>
+
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "s3vrm52esg");
+  </script>
+</head>
+<body>
+    <div id="logo-container">
+        <div id="app-logo"></div>
+    </div>
+
+    <div id="welcome-screen">
+        <div class="welcome-container">
+            <h1>raga.fm</h1>
+            <p class="welcome-subtitle">Raga Megh Malhar is an ideal match for Landor Studio's ambient sonic identity — a musical embodiment of their water-inspired origin, transformative brand ethos, and premium yet welcoming persona.</p>
+            <div id="raga-suggestions">
+                <!-- Raga cards will be injected here by p5.js -->
+            </div>
+            <div id="manual-load-container" style="margin-top: 20px; text-align: center;">
+                <button id="force-load-button" style="background: #6A5ACD; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; display: none;">
+                    Force Load Ragas (if nothing appears)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="app" class="hidden">
+        <div class="top-bar">
+            <button id="back-button" class="control-button">←</button>
+            <span id="raga-name-display"></span>
+        </div>
+        <div class="footer-controls">
+            <div id="playback-controls">
+                <button id="start-stop-button" class="control-button" aria-label="Start/Stop"></button>
+                <div id="mode-toggle" class="control-button">
+                    <span class="mode-text">Amb</span>
+                    <span class="mode-text">Rhy</span>
+                    <span class="mode-text">Int</span>
+                    <div class="knob"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
